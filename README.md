@@ -1,2 +1,2 @@
-issue-tracker-ws-boot
-=====================
+# Issue Tracker Web Services
+**Spring Boot Stack**
