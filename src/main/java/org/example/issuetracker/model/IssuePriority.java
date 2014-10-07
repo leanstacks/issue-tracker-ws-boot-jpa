@@ -1,4 +1,4 @@
-package org.example.issuetracker.model.jpa;
+package org.example.issuetracker.model;
 
 public enum IssuePriority {
 	LOW,

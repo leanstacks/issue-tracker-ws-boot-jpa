@@ -6,6 +6,10 @@ import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
+import org.example.issuetracker.model.IssuePriority;
+import org.example.issuetracker.model.IssueStatus;
+import org.example.issuetracker.model.IssueType;
+
 @Entity
 public class Issue {
 
@@ -78,5 +82,4 @@ public class Issue {
 		this.status = status;
 	}
 
-	
 }
