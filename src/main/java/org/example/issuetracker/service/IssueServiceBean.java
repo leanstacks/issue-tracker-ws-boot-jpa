@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.example.issuetracker.model.jpa.Issue;
-import org.example.issuetracker.repository.IssueRepository;
+import org.example.issuetracker.repository.jpa.IssueRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
