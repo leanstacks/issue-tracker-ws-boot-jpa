@@ -1,5 +1,6 @@
 package org.example.issuetracker.web.api;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.example.issuetracker.model.jpa.Issue;
@@ -29,6 +30,11 @@ public class IssueController {
 		List<Issue> issues = null;
 		try {
 			issues = issueService.findAll();
+			
+			// if no issues found, create an empty list
+			if(issues == null) {
+				issues = new ArrayList<Issue>();
+			}
 		} catch(Exception e) {
 			return new ResponseEntity<List<Issue>>(issues,HttpStatus.INTERNAL_SERVER_ERROR);
 		}

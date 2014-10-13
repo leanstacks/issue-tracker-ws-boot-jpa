@@ -1,6 +1,5 @@
 package org.example.issuetracker.service;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import org.example.issuetracker.model.jpa.Issue;
@@ -23,12 +22,7 @@ public class IssueServiceBean implements IssueService {
 		logger.info("> findAll");
 
 		List<Issue> issues = issueRepository.findAll();
-		
-		// if no issues found, return empty list instead of null
-		if(issues == null) {
-			issues = new ArrayList<Issue>();
-		}
-		
+				
 		logger.info("< findAll");
 		return issues;
 	}
