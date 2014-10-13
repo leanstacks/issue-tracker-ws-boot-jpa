@@ -36,6 +36,7 @@ public class IssueController {
 				issues = new ArrayList<Issue>();
 			}
 		} catch(Exception e) {
+			logger.error("Unexpected Exception caught.", e);
 			return new ResponseEntity<List<Issue>>(issues,HttpStatus.INTERNAL_SERVER_ERROR);
 		}
 		
