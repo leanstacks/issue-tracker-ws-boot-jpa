@@ -5,5 +5,5 @@ public enum IssueType {
 	ENHANCEMENT,
 	STORY,
 	TASK
-
+ 
 }

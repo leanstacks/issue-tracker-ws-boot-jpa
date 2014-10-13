@@ -11,20 +11,20 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class IssueServiceBean implements IssueService {
-	
-	private Logger logger = LoggerFactory.getLogger(this.getClass());
-	
-	@Autowired
-	private IssueRepository issueRepository;
 
-	@Override
-	public List<Issue> findAll() {
-		logger.info("> findAll");
+    private Logger logger = LoggerFactory.getLogger(this.getClass());
 
-		List<Issue> issues = issueRepository.findAll();
-				
-		logger.info("< findAll");
-		return issues;
-	}
+    @Autowired
+    private IssueRepository issueRepository;
+
+    @Override
+    public List<Issue> findAll() {
+        logger.info("> findAll");
+
+        List<Issue> issues = issueRepository.findAll();
+
+        logger.info("< findAll");
+        return issues;
+    }
 
 }

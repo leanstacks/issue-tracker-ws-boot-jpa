@@ -5,4 +5,4 @@ public enum IssuePriority {
 	MEDIUM,
 	HIGH
 
-}
+} 
