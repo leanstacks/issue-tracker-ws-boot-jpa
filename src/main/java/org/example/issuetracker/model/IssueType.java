@@ -1,9 +1,9 @@
 package org.example.issuetracker.model;
 
 public enum IssueType {
-	BUG,
-	ENHANCEMENT,
-	STORY,
-	TASK
- 
+    BUG,
+    ENHANCEMENT,
+    STORY,
+    TASK
+
 }

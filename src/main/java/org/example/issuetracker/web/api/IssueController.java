@@ -23,7 +23,10 @@ public class IssueController {
     @Autowired
     private IssueService issueService;
 
-    @RequestMapping(value = "/issues", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+    @RequestMapping(
+            value = "/issues",
+            method = RequestMethod.GET,
+            produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<List<Issue>> getAllIssues() {
         logger.info("> getAllIssues");
 
