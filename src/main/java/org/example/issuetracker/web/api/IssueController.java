@@ -11,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -46,6 +47,26 @@ public class IssueController {
 
         logger.info("< getAllIssues");
         return new ResponseEntity<List<Issue>>(issues, HttpStatus.OK);
+    }
+
+    @RequestMapping(
+            value = "/issues",
+            method = RequestMethod.POST,
+            consumes = MediaType.APPLICATION_JSON_VALUE,
+            produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<Issue> createIssue(@RequestBody Issue issue) {
+        logger.info("> createIssue");
+
+        Issue createdIssue = null;
+        try {
+            createdIssue = issueService.create(issue);
+        } catch (Exception e) {
+            logger.error("Unexpected Exception caught.", e);
+            return new ResponseEntity<Issue>(HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+
+        logger.info("< createIssue");
+        return new ResponseEntity<Issue>(createdIssue, HttpStatus.CREATED);
     }
 
 }
