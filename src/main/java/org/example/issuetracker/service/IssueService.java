@@ -12,4 +12,11 @@ public interface IssueService {
      */
     List<Issue> findAll();
 
+    /**
+     * Create a new Issue entity in the data repository.
+     * @param issue An issue entity to persist.
+     * @return The persisted issue entity.
+     */
+    Issue create(Issue issue);
+
 }
