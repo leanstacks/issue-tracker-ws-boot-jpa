@@ -45,4 +45,15 @@ public class IssueServiceBean implements IssueService {
         logger.info("< create");
         return i;
     }
+
+    @Override
+    public Issue update(Issue issue) {
+        logger.info("> update");
+
+        Issue i = issueRepository.save(issue);
+
+        logger.info("< update");
+        return i;
+    }
+
 }

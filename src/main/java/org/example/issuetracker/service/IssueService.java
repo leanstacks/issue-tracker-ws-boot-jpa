@@ -19,4 +19,11 @@ public interface IssueService {
      */
     Issue create(Issue issue);
 
+    /**
+     * Update an Issue entity in the data repository.
+     * @param issue An issue entity to update.
+     * @return The updated issue entity.
+     */
+    Issue update(Issue issue);
+
 }
