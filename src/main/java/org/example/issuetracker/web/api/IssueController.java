@@ -69,4 +69,24 @@ public class IssueController {
         return new ResponseEntity<Issue>(createdIssue, HttpStatus.CREATED);
     }
 
+    @RequestMapping(
+            value = "/issues/{id}",
+            method = RequestMethod.PUT,
+            consumes = MediaType.APPLICATION_JSON_VALUE,
+            produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<Issue> updateIssue(@RequestBody Issue issue) {
+        logger.info("> updateIssue");
+
+        Issue updatedIssue = null;
+        try {
+            updatedIssue = issueService.update(issue);
+        } catch (Exception e) {
+            logger.error("Unexpected Exception caught.", e);
+            return new ResponseEntity<Issue>(HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+
+        logger.info("< updateIssue");
+        return new ResponseEntity<Issue>(updatedIssue, HttpStatus.OK);
+    }
+
 }
