@@ -26,4 +26,10 @@ public interface IssueService {
      */
     Issue update(Issue issue);
 
+    /**
+     * Delete an Issue entity from the data repository.
+     * @param id The primary key identifier of the issue to delete.
+     */
+    void delete(Long id);
+
 }

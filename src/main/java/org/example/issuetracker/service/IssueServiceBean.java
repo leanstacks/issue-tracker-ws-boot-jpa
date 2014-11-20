@@ -56,4 +56,13 @@ public class IssueServiceBean implements IssueService {
         return i;
     }
 
+    @Override
+    public void delete(Long id) {
+        logger.info("> delete");
+
+        issueRepository.delete(id);
+
+        logger.info("< delete");
+    }
+
 }
