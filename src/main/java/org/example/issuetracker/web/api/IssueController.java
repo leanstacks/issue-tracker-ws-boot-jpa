@@ -104,7 +104,7 @@ public class IssueController {
         }
 
         logger.info("< deleteIssue");
-        return new ResponseEntity<Issue>(HttpStatus.OK);
+        return new ResponseEntity<Issue>(HttpStatus.NO_CONTENT);
     }
 
 }
