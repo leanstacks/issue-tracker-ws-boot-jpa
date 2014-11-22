@@ -51,6 +51,31 @@ public class IssueController {
     }
 
     @RequestMapping(
+            value = "/issues/{id}",
+            method = RequestMethod.GET,
+            produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<Issue> getIssue(@PathVariable("id") Long id) {
+        logger.info("> getIssue");
+
+        Issue issue = null;
+        try {
+            issue = issueService.find(id);
+
+            // if no issue found, return 404 status code
+            if (issue == null) {
+                return new ResponseEntity<Issue>(HttpStatus.NOT_FOUND);
+            }
+        } catch (Exception e) {
+            logger.error("Unexpected Exception caught.", e);
+            return new ResponseEntity<Issue>(issue,
+                    HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+
+        logger.info("< getIssue");
+        return new ResponseEntity<Issue>(issue, HttpStatus.OK);
+    }
+
+    @RequestMapping(
             value = "/issues",
             method = RequestMethod.POST,
             consumes = MediaType.APPLICATION_JSON_VALUE,
