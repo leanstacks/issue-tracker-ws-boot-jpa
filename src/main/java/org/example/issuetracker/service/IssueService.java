@@ -13,6 +13,14 @@ public interface IssueService {
     List<Issue> findAll();
 
     /**
+     * Search the issue data repository for a single Issue entity by the primary
+     * key identifier.
+     * @param id An issue primary key identifier.
+     * @return An Issue entity or null if not found.
+     */
+    Issue find(Long id);
+
+    /**
      * Create a new Issue entity in the data repository.
      * @param issue An issue entity to persist.
      * @return The persisted issue entity.

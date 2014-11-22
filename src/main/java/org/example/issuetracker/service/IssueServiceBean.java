@@ -30,6 +30,16 @@ public class IssueServiceBean implements IssueService {
     }
 
     @Override
+    public Issue find(Long id) {
+        logger.info("> find id:{}", id);
+
+        Issue issue = issueRepository.findOne(id);
+
+        logger.info("< find id:{}", id);
+        return issue;
+    }
+
+    @Override
     public Issue create(Issue issue) {
         logger.info("> create");
 
