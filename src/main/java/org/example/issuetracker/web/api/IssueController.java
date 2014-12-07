@@ -3,7 +3,7 @@ package org.example.issuetracker.web.api;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.example.issuetracker.model.jpa.Issue;
+import org.example.issuetracker.model.Issue;
 import org.example.issuetracker.service.IssueService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

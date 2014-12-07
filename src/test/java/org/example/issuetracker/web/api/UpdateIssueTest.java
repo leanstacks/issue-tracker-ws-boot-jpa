@@ -1,9 +1,9 @@
 package org.example.issuetracker.web.api;
 
+import org.example.issuetracker.model.Issue;
 import org.example.issuetracker.model.IssuePriority;
 import org.example.issuetracker.model.IssueStatus;
 import org.example.issuetracker.model.IssueType;
-import org.example.issuetracker.model.jpa.Issue;
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;

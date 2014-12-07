@@ -1,6 +1,6 @@
 package org.example.issuetracker.web.api;
 
-import org.example.issuetracker.model.jpa.Issue;
+import org.example.issuetracker.model.Issue;
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;

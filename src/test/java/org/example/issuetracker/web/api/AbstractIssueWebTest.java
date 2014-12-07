@@ -1,9 +1,9 @@
 package org.example.issuetracker.web.api;
 
+import org.example.issuetracker.model.Issue;
 import org.example.issuetracker.model.IssuePriority;
 import org.example.issuetracker.model.IssueStatus;
 import org.example.issuetracker.model.IssueType;
-import org.example.issuetracker.model.jpa.Issue;
 import org.example.issuetracker.service.IssueService;
 import org.springframework.beans.factory.annotation.Autowired;
 
